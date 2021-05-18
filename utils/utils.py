@@ -49,3 +49,7 @@ def vectorize_string(string, char2idx):
     char_vector = [char2idx[char] for char in string]
     return np.array(char_vector)
 
+def reverse_vectorization(char_array, idx2char):
+    result = [idx2char[char_id] for char_id in char_array]
+    return ''.join(result)
+
