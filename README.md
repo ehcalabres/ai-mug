@@ -1,2 +1,2 @@
-# ai-mug
-Deep learning model for music generation.
+# AI-MuG
+A series of deep learning models for music generation.

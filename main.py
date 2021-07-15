@@ -7,7 +7,7 @@ import tensorflow as tf
 
 from tqdm import tqdm
 from utils import utils
-from model.model import MuGModel, create_optimizer, generate_text, train_step, get_batch, compute_loss
+from model.rnn_mug_model import RNNMuGModel, create_optimizer, generate_text, train_step, get_batch, compute_loss
 
 songs = utils.get_songs_from_abc_dataset('data/irish_music.abc')
 
@@ -27,7 +27,7 @@ rnn_units = 1024
 checkpoint_dir = './checkpoints'
 checkpoint_prefix = os.path.join(checkpoint_dir, "my_ckpt")
 
-model = MuGModel(vocab_size=vocab_size,
+model = RNNMuGModel(vocab_size=vocab_size,
                  embedding_dim=embedding_dim,
                  rnn_units=rnn_units,
                  batch_size=batch_size)
@@ -66,7 +66,7 @@ model.save_weights(checkpoint_prefix)
 
 inference_input = 'X:1\nK: D major\n'
 
-model = MuGModel(vocab_size=vocab_size,
+model = RNNMuGModel(vocab_size=vocab_size,
                  embedding_dim=embedding_dim,
                  rnn_units=rnn_units,
                  batch_size=batch_size)

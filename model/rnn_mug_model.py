@@ -2,9 +2,9 @@ import numpy as np
 import tensorflow as tf
 from tqdm.std import tqdm
 
-class MuGModel(tf.keras.Model):
+class RNNMuGModel(tf.keras.Model):
     def __init__(self, vocab_size, embedding_dim, rnn_units, batch_size) -> None:
-        super(MuGModel, self).__init__()
+        super(RNNMuGModel, self).__init__()
         self.embedding_layer = tf.keras.layers.Embedding(vocab_size, 
                                                          embedding_dim,
                                                          batch_input_shape=[batch_size, None],
